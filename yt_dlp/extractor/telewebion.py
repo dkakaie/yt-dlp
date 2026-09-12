@@ -12,7 +12,7 @@ def _fmt_url(url):
 
 
 class TelewebionIE(InfoExtractor):
-    _VALID_URL = r'https?://(?:www\.)?telewebion\.net/episode/(?P<id>(?:0x[a-fA-F\d]+|\d+))'
+    _VALID_URL = r'https?://(?:www\.)?telewebion\.(?P<ext>net|ir)/episode/(?P<id>(?:0x[a-fA-F\d]+|\d+))'
     _TESTS = [{
         'url': 'http://www.telewebion.net/episode/0x1b3139c/',
         'info_dict': {
