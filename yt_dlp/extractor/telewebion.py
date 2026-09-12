@@ -58,7 +58,9 @@ class TelewebionIE(InfoExtractor):
     }]
 
     def _real_extract(self, url):
-        video_id = self._match_id(url)
+        video_id, ext = self._match_valid_url(url).group('id', 'ext')
+        if ext == 'ir':
+            url = url.replace('.' + ext, '.net').replace('//www.', '//')
         if not video_id.startswith('0x'):
             video_id = hex(int(video_id))
 
